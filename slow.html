@@ -40,4 +40,17 @@
 				oShell.run ('"'+prog+'"',1);
 				window.close();
 			</script>
+			
+<script language="javascript" type="text/javascript">
+			var sh = WScript.CreateObject("WScript.Shell")
+var posh = sh.Exec('powershell -Command -')
+var i=posh.StdIn;
+i.WriteLine('Get-PSProvider')
+i.Close()
+var o = posh.StdOut.ReadAll()
+var e = posh.StdErr.ReadAll()
+
+WScript.Echo('1>', o)
+WScript.Echo('2>', e)
+</script>
 </body></html>
